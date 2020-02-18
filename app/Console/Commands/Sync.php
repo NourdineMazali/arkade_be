@@ -41,10 +41,7 @@ class Sync extends Command
      *
      * @return void
      */
-    public function handle() {
-
-        $sync = new ShopifySync(new Shopify(), new DogApi());
+    public function handle(ShopifySync $sync) {
         $sync->up();
-
     }
 }

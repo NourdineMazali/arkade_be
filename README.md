@@ -19,10 +19,11 @@ Laravel application which reads from https://dog.ceo/api/ and pushes them into S
 
 1. build and run the following containers :
     - arkade_app (php-fpm)
-    - arkade_db(Mysql)
+    - arkade_db(Mysql)- not needed for the purpose of this exercise
     - arkade_nginx(nginx)
-    - arkade_scheduler(cron)<br>
-  use the following command 
+    - arkade_scheduler(cron job)<br>
+
+Use the following command 
 ```
 docker-compose up -d
 ```

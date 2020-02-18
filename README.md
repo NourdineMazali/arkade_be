@@ -21,7 +21,7 @@ Laravel application which reads from https://dog.ceo/api/ and pushes them into S
     - arkade_app (php-fpm)
     - arkade_db(Mysql)
     - arkade_nginx(nginx)
-    - arkade_scheduler(cron)
+    - arkade_scheduler(cron)<br>
   use the following command 
 ```
 docker-compose up -d
@@ -29,7 +29,7 @@ docker-compose up -d
 
 2. Connect to the docker_app container:
  ```
- docker exec -it docker_app bash
+ docker exec -it arkade_app bash
 ```
 
 3. Copy .env.example to .env
@@ -42,7 +42,7 @@ docker-compose up -d
  composer install
  ```
  
- 5. Access the web app from http://localhost:8080
+5. Access the web app from http://localhost:8080
  
 ## Run Scheduler
 The cron job is running on "arkade_scheduler" docker container, the container is running the following cron job
@@ -53,7 +53,7 @@ The products sync logic is set as a laravel command located in app/Console/Comma
 ```
 php artisan shopify:sync
 ``` 
- ##Unit Tests
+##Unit Tests
 ```
  phpunit tests/Unit
 ```

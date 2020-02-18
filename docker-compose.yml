@@ -1,0 +1,36 @@
+version: "3.1"
+services:
+  database:
+    container_name: arkade_db
+    image: mysql:5.7.19
+    restart: always
+    ports:
+      - "3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_DATABASE=db
+
+  webserver:
+    image: nginx:alpine
+    container_name: arkade_nginx
+    volumes:
+      - ./docker-files/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./:/var/www/html
+    ports:
+      - "8080:80"
+
+  php-fpm:
+    build: docker-files/php-fpm
+    container_name: arkade_app
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+      - ./docker-files/php-fpm/php-ini-overrides.ini:/etc/php/7.2/fpm/conf.d/99-overrides.ini
+
+  scheduler:
+    build:
+      context: .
+      dockerfile: docker-files/cron/Dockerfile
+    container_name: arkade-scheduler
+    volumes:
+      - .:/var/www/html

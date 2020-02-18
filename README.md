@@ -13,7 +13,7 @@ Laravel application which reads from https://dog.ceo/api/ and pushes them into S
 * GuzzleHTTP library 6.5
 * Phpunit 8.2
 
-##Getting Started
+## Getting Started
 
 ### Option 1 : Use DOCKER
 
@@ -53,7 +53,7 @@ The products sync logic is set as a laravel command located in app/Console/Comma
 ```
 php artisan shopify:sync
 ``` 
-##Unit Tests
+## Unit Tests
 ```
  phpunit tests/Unit
 ```

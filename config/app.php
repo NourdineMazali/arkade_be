@@ -176,6 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\ShopifyServiceProvider::class,
         App\Providers\DogServiceProvider::class,
+        App\Providers\SyncServiceProvider::class,
 
     ],
 
@@ -230,6 +231,7 @@ return [
 
         'Shopify'    => App\Services\Shopify\Shopify::class,
         'Dog'    => App\Services\Dog\Dog::class,
+        'Sync'    => App\Services\Sync\Sync::class
 
     ],
 

@@ -12,6 +12,8 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Exception\ClientException;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\Facades\Log;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Handler\CurlHandler;
 
 class Shopify extends Facade
 {
